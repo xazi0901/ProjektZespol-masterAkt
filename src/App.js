@@ -12,7 +12,7 @@ import{ About} from "./components/About"
 import {Contact} from "./components/Contact"
 import {Home} from "./components/Home"
 import {Footer} from "./components/Footer"
-function App() {
+const App = function App() {
   return (
     <BrowserRouter>
     <div className="App">
@@ -24,13 +24,14 @@ function App() {
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
+      data-testid="navbar"
         className="me-auto my-2 my-lg-2"
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link as={Link} to={"/"} id="navLink">Strona Główna</Nav.Link>
-        <Nav.Link as={Link} to={"/about"} href="#about" id="navLink">Oferta</Nav.Link>
-        <Nav.Link as={Link} to={"/contact"} href="" id="navLinkLast">Kontakt</Nav.Link>
+        <Nav.Link as={Link} to={"/"} id="navLink" data-testid="home-link">Strona Główna</Nav.Link>
+        <Nav.Link as={Link} to={"/about"} href="#about" id="navLink" data-testid="about-link">Oferta</Nav.Link>
+        <Nav.Link as={Link} to={"/contact"} href="" id="navLinkLast" data-testid="contact-link">Kontakt</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Container>
